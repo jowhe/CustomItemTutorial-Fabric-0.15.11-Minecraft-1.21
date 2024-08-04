@@ -5,7 +5,16 @@ This tutorial is intended for those who have already setup their development env
 Folder structure is personal preference however you should always make sure that your directories are readable, for example `src/main/<package_name>/item` is a clean directory to store all of your Item code.
 This can be applied for any instance such as blocks and entities.
 
-### CustomItemTutorial.java
+<details> <summary><h3 style="margin-bottom: -5px;">
+	CustomItemTutorial.java
+</h3>
+<hr>
+This is the main class for the mod. Click to expand.
+</summary>
+
+------------
+
+
 ```java
 package org.sixixsix.customitemtutorial;
 
@@ -28,9 +37,14 @@ public class CustomItemTutorial implements ModInitializer {
 }
 
 ```
-This is the main class for the mod.
+</details>
+<details> <summary><h3 style="margin-bottom: -5px;">
+	CustomItem.java
+</h3>
+<hr>
+This is the basic outline of the Custom Item Class. Here is where all the code that handles the item, is contained. Click to expand.
+</summary>
 
-### CustomItem.java
 ```java
 package org.sixixsix.customitemtutorial.item;
 
@@ -57,9 +71,17 @@ public class CustomItem extends Item {
 }
 
 ```
-This is the basic outline of the Custom Item Class. Here is where all the code that handles the item, is contained.
+</details>
+<details> <summary><h3 style="margin-bottom: -5px;">
+	Registering Items
+</h3>
+<hr>
+An example of how to register Items into minecraft. Click to expand.
+</summary>
 
-### Registering Items
+------------
+
+
 ```java
 package org.sixixsix.customitemtutorial.item;
 
@@ -95,3 +117,4 @@ public class ModItems {
 }
 
 ```
+</details>
