@@ -45,6 +45,9 @@ public class CustomItemTutorial implements ModInitializer {
 This is the basic outline of the Custom Item Class. Here is where all the code that handles the item, is contained. Click to expand.
 </summary>
 
+------------
+
+
 ```java
 package org.sixixsix.customitemtutorial.item;
 
