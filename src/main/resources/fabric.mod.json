@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "customitemtutorial",
+  "version": "${version}",
+  "name": "CustomItemTutorial",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/customitemtutorial/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "org.sixixsix.customitemtutorial.client.CustomItemTutorialClient"
+    ],
+    "main": [
+      "org.sixixsix.customitemtutorial.CustomItemTutorial"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
