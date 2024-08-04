@@ -1,5 +1,6 @@
 ## Custom Item Tutorial for FabricMC (1.21)
-This tutorial is intended for those who have already setup their development environment, and need some support adding Items into their mod.[<img src="https://img.shields.io/badge/1.21-green?style=flat&label=Minecraft%20Version&color=green">](<https://www.minecraft.net/download>) [<img src="https://img.shields.io/badge/0.15.11-blue?style=flat&label=Fabric%20Version&color=blue">](<https://fabricmc.net/use/installer/>)
+This tutorial is intended for those who have already setup their development environment, and need some support adding Items into their mod.
+[<img src="https://img.shields.io/badge/1.21-green?style=flat&label=Minecraft%20Version&color=green">](<https://www.minecraft.net/download>) [<img src="https://img.shields.io/badge/0.15.11-blue?style=flat&label=Fabric%20Version&color=blue">](<https://fabricmc.net/use/installer/>)
 
 ### Folder Structure
 Folder structure is personal preference however you should always make sure that your directories are readable, for example `src/main/<package_name>/item` is a clean directory to store all of your Item code.
