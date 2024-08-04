@@ -3,8 +3,10 @@
   "id": "customitemtutorial",
   "version": "${version}",
   "name": "CustomItemTutorial",
-  "description": "",
-  "authors": [],
+  "description": "A guide to adding custom items using Fabric into Minecraft 1.21",
+  "authors": [
+    "zixixix"
+  ],
   "contact": {},
   "license": "All-Rights-Reserved",
   "icon": "assets/customitemtutorial/icon.png",
