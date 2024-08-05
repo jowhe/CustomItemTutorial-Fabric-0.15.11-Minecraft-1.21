@@ -150,7 +150,7 @@ After adding those you should see your Item now has it's custom name and a custo
 </details>
 
 # Adding Custom Textures and Models
-In order to add custom textures/models we need to setup the correct directories in order for them to be accessible.
+In order to add custom textures/models we need to setup the correct directories in order for them to be accessible. A good source for understanding models would be the [Minecraft Wiki Page](https://minecraft.wiki/w/Tutorials/Models).
 
 For Textures:
 `src/main/resources/assets/textures/item/`
