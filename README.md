@@ -3,6 +3,11 @@ This tutorial is intended for those who have already setup their development env
 
 [<img src="https://img.shields.io/badge/1.21-green?style=flat&label=Minecraft%20Version&color=green">](<https://www.minecraft.net/download>) [<img src="https://img.shields.io/badge/0.15.11-blue?style=flat&label=Fabric%20Version&color=blue">](<https://fabricmc.net/use/installer/>)
 
+# Contents
+1. #### [Changing the Display Name and adding a Tooltip](#changing-the-display-name-and-adding-a-tooltip-1)
+2. #### [Adding Custom Textures and Models](#adding-custom-textures-and-models-1)
+
+
 ## Folder Structure
 Folder structure is personal preference however you should always make sure that your directories are readable, for example `src/main/<package_name>/item` is a clean directory to store all of your Item code.
 This can be applied for any instance such as blocks and entities.
@@ -65,7 +70,7 @@ This can be applied for any instance such as blocks and entities.
     }
 
 ```
-    
+
 </details>
 <details><summary><h3>Registering an Item</h3></summary>
 
@@ -142,4 +147,35 @@ To add the tooltip text you must go back into your CustomItem class, where you d
 After adding those you should see your Item now has it's custom name and a custom tooltip.
 <details><summary>Result</summary>
 <img src="https://github.com/user-attachments/assets/6198977a-f144-43d9-8900-d6293c87f4a4">
+</details>
+
+# Adding Custom Textures and Models
+In order to add custom textures/models we need to setup the correct directories in order for them to be accessible.
+
+For Textures:
+`src/main/resources/assets/textures/item/`
+
+For Models:
+`src/main/resources/assets/models/item/`
+
+Simply create your textures and name them appropiatly, this will help you when applying the textures to the model.
+
+## Adding your Model
+To add your model you need to create a `<model_name>.json` e.g. `custom_item.json`, in this file you have to input your model data. 
+
+```json
+
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "custom_item_tutorial:item/custom_item"
+  }
+}
+
+```
+Breaking down what this file is doing is pretty straightforward, ensuring it is a type of item/handheld means that it will be scaled correctly.
+The value inside of layer0 refers to the namespace of the mod which is what you set `MOD_ID` to, `item/custom_item` refers to `textures/item/custom_item.png`.
+
+<details><summary>Result</summary>
+<img src="https://github.com/user-attachments/assets/0322f87d-cd02-4c06-a01b-6372ecc09b42">
 </details>
