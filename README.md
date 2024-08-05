@@ -6,7 +6,8 @@ This tutorial is intended for those who have already setup their development env
 Folder structure is personal preference however you should always make sure that your directories are readable, for example `src/main/<package_name>/item` is a clean directory to store all of your Item code.
 This can be applied for any instance such as blocks and entities.
 
-### CustomItemTutorial.java
+<details><h3>CustomItemTutorial.java</h3>
+<p>This is the main class for the mod.</p>
 
     package org.sixixsix.customitemtutorial;  
       
@@ -23,9 +24,9 @@ This can be applied for any instance such as blocks and entities.
       // Call the initializeItems function to register the items in the game.  
       ModItems.initializeItems();  
      }}
-This is the main class for the mod.
-
-### CustomItem.java
+</details>
+<details><h3>CustomItem.java</h3>
+<p>This is the basic outline of the Custom Item Class. Here is where all the code that handles the item, is contained.</p>
 
     package org.sixixsix.customitemtutorial.item;  
       
@@ -44,9 +45,8 @@ This is the main class for the mod.
      }  
       
     }
-This is the basic outline of the Custom Item Class. Here is where all of the code that handles the item, is contained.
-
-### Registering Items
+</details>
+<details><summary><h3>Registering an Item</h3></summary>
 
     package org.sixixsix.customitemtutorial.item;  
       
@@ -73,3 +73,4 @@ This is the basic outline of the Custom Item Class. Here is where all of the cod
      // CustomItem.ITEM is our ITEM's declaration.  registerItem("custom_item", CustomItem.ITEM);  
      }  
     }
+</details>
