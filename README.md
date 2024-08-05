@@ -1,5 +1,6 @@
 ## Custom Item Tutorial for FabricMC (1.21)
 This tutorial is intended for those who have already setup their development environment, and need some support adding Items into their mod.
+
 [<img src="https://img.shields.io/badge/1.21-green?style=flat&label=Minecraft%20Version&color=green">](<https://www.minecraft.net/download>) [<img src="https://img.shields.io/badge/0.15.11-blue?style=flat&label=Fabric%20Version&color=blue">](<https://fabricmc.net/use/installer/>)
 
 ### Folder Structure
@@ -74,7 +75,8 @@ This can be applied for any instance such as blocks and entities.
      }  
     }
 </details>
-<details><summary><h3>Result</h3></summary>
-![item_in-game](https://github.com/user-attachments/assets/b4e35cd6-0cc8-4597-a8e7-fd5541b4e7de)
+<details><summary><h3>Result</h3>
+<p>The result of the code above will add a custom item into the game.</p></summary>
+<img src="https://github.com/user-attachments/assets/b4e35cd6-0cc8-4597-a8e7-fd5541b4e7de">
 </details>
 
