@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "custom_item_tutorial:item/custom_item"
+  }
+}

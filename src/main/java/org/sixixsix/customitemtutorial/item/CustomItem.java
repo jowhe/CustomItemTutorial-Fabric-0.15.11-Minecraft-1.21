@@ -1,6 +1,11 @@
 package org.sixixsix.customitemtutorial.item;
 
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.tooltip.TooltipType;
+import net.minecraft.text.Text;
+
+import java.util.List;
 
 public class CustomItem extends Item {
 
@@ -19,5 +24,16 @@ public class CustomItem extends Item {
         super(settings);
     }
 
-
+    /**
+     * This override allows you to manipulate the items' tooltip.
+     * @param stack The current ItemStack that is in the hand of player.
+     * @param context Tooltip context class handles the current tooltip.
+     * @param tooltip The tooltip text, it is multi-line so calling tooltip.add will add another line.
+     * @param type The type of tooltip that is being displayed.
+     */
+    @Override
+    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
+        tooltip.add(Text.translatable("tooltip.custom_item_tutorial.custom_item"));
+        super.appendTooltip(stack, context, tooltip, type);
+    }
 }
