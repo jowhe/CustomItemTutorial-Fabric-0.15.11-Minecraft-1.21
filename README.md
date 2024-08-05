@@ -1,9 +1,9 @@
-## Custom Item Tutorial for FabricMC (1.21)
+# Custom Item Tutorial for FabricMC (1.21)
 This tutorial is intended for those who have already setup their development environment, and need some support adding Items into their mod.
 
 [<img src="https://img.shields.io/badge/1.21-green?style=flat&label=Minecraft%20Version&color=green">](<https://www.minecraft.net/download>) [<img src="https://img.shields.io/badge/0.15.11-blue?style=flat&label=Fabric%20Version&color=blue">](<https://fabricmc.net/use/installer/>)
 
-### Folder Structure
+## Folder Structure
 Folder structure is personal preference however you should always make sure that your directories are readable, for example `src/main/<package_name>/item` is a clean directory to store all of your Item code.
 This can be applied for any instance such as blocks and entities.
 
@@ -81,3 +81,19 @@ This can be applied for any instance such as blocks and entities.
 <img src="https://github.com/user-attachments/assets/b4e35cd6-0cc8-4597-a8e7-fd5541b4e7de">
 </details>
 
+# Changing the Display Name and adding a Tooltip.
+This section shows you how you can add a name and tooltip to your item.
+
+## Adding language translations
+To add this file you must navigate to the `src/main/resources/` and create two new folders one called `assets` and the other with the same MOD_ID as you set in your main class.
+It should look like this `src/main/resources/assets/custom_mod_id/` once you have that you need to create a new folder called `lang` and then a new json file called en_us.json.
+This is essentially an extension to the default language pack in minecraft and allows you to translate that `item.custom_item_tutorial.custom_item` into something more readable.
+While you're in the en_us.json file, add another line underneath your item name, and call it something like `tooltip.custom_item_tutorial.custom_item`. This will setup the tooltip text for later.
+
+<details><summary>en_us.json file</summary>
+<img src="">
+</details>
+
+<details><summary>Result</summary>
+<img src="">
+</details>
