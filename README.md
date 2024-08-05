@@ -88,8 +88,8 @@ This section shows you how you can add a name and tooltip to your item.
 To add this file you must navigate to the `src/main/resources/` and create two new folders one called `assets` and the other with the same MOD_ID as you set in your main class.
 
 It should look like `src/main/resources/assets/custom_mod_id/`
+Once you have that you need to create a new folder called `lang` and then a new json file called `en_us.json`.
 
-Once you have that you need to create a new folder called `lang` and then a new json file called en_us.json.
 This is essentially an extension to the default language pack in minecraft and allows you to translate that `item.custom_item_tutorial.custom_item` into something more readable.
 While you're in the en_us.json file, add another line underneath your item name, and call it something like `tooltip.custom_item_tutorial.custom_item`. This will setup the tooltip text for later.
 
