@@ -1,5 +1,5 @@
 # Custom Item Tutorial for FabricMC (1.21)
-This tutorial is intended for those who have already setup their development environment, and need some support adding Items into their mod.
+This tutorial is intended for those who have already setup their development environment, and need some support adding Items into their mod. Please let me know if there are any errors, or if things can be improved upon all feedback is good feedback :)s
 
 [<img src="https://img.shields.io/badge/1.21-green?style=flat&label=Minecraft%20Version&color=green">](<https://www.minecraft.net/download>) [<img src="https://img.shields.io/badge/0.15.11-blue?style=flat&label=Fabric%20Version&color=blue">](<https://fabricmc.net/use/installer/>)
 
