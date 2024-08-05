@@ -6,8 +6,8 @@ This tutorial is intended for those who have already setup their development env
 Folder structure is personal preference however you should always make sure that your directories are readable, for example `src/main/<package_name>/item` is a clean directory to store all of your Item code.
 This can be applied for any instance such as blocks and entities.
 
-<details><h3>CustomItemTutorial.java</h3>
-<p>This is the main class for the mod.</p>
+<details><summary><h3>CustomItemTutorial.java</h3>
+<p>This is the main class for the mod.</p></summary>
 
     package org.sixixsix.customitemtutorial;  
       
@@ -25,8 +25,8 @@ This can be applied for any instance such as blocks and entities.
       ModItems.initializeItems();  
      }}
 </details>
-<details><h3>CustomItem.java</h3>
-<p>This is the basic outline of the Custom Item Class. Here is where all the code that handles the item, is contained.</p>
+<details><summary><h3>CustomItem.java</h3>
+<p>This is the basic outline of the Custom Item Class. Here is where all the code that handles the item, is contained.</p></summary>
 
     package org.sixixsix.customitemtutorial.item;  
       
