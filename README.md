@@ -10,70 +10,100 @@ This can be applied for any instance such as blocks and entities.
 <details><summary><h3>CustomItemTutorial.java</h3>
 <p>This is the main class for the mod.</p></summary>
 
-    package org.sixixsix.customitemtutorial;  
-      
-    import net.fabricmc.api.ModInitializer;  
-    import org.sixixsix.customitemtutorial.item.ModItems;  
-      
-    public class CustomItemTutorial implements ModInitializer {  
-      
-      public static String MOD_ID = "custom_item_tutorial";  
-      
-      /**  
-     * This is the main entrypoint of your mod. * All of your main functionality will be contained in here. */  @Override  
-      public void onInitialize() {  
-      // Call the initializeItems function to register the items in the game.  
-      ModItems.initializeItems();  
-     }}
+```java
+    package org.sixixsix.customitemtutorial;
+
+    import net.fabricmc.api.ModInitializer;
+    import org.sixixsix.customitemtutorial.item.ModItems;
+    
+    public class CustomItemTutorial implements ModInitializer {
+    
+        public static String MOD_ID = "custom_item_tutorial";
+    
+        /**
+         * This is the main entrypoint of your mod.
+         * All of your main functionality will be contained in here.
+         */
+        @Override
+        public void onInitialize() {
+            // Call the initializeItems function to register the items in the game.
+            ModItems.initializeItems();
+        }
+    }
+```
+
 </details>
 <details><summary><h3>CustomItem.java</h3>
 <p>This is the basic outline of the Custom Item Class. Here is where all the code that handles the item, is contained.</p></summary>
 
-    package org.sixixsix.customitemtutorial.item;  
-      
-    import net.minecraft.item.Item;  
-      
-    public class CustomItem extends Item {  
-      
-      /** Declaration of the ITEM  
-     * Note that we declare an Item to be registered as ITEM, but we pass, * the {@link CustomItem} class we have made.  
-     * This ensures that the Item is actually an Item but is an instance of our CustomItem. */  public static final Item ITEM = new CustomItem(new Settings());  
-      
-      /** Constructor for CustomItem  
-     * This constructor can be used for many things, * for the purpose of this tutorial it will be defaulted {@link Item.Settings()}.  
-     */  public CustomItem(Settings settings) {  
-      super(settings);  
-     }  
-      
+```java
+    package org.sixixsix.customitemtutorial.item;
+
+    import net.minecraft.item.Item;
+    import net.minecraft.item.ItemStack;
+    import net.minecraft.item.tooltip.TooltipType;
+    import net.minecraft.text.Text;
+    
+    import java.util.List;
+    
+    public class CustomItem extends Item {
+    
+        /** Declaration of the ITEM
+         * Note that we declare an Item to be registered as ITEM, but we pass,
+         * the {@link CustomItem} class we have made.
+         * This ensures that the Item is actually an Item but is an instance of our CustomItem.
+         */
+        public static final Item ITEM = new CustomItem(new Settings());
+    
+        /** Constructor for CustomItem
+         * This constructor can be used for many things,
+         * for the purpose of this tutorial it will be defaulted {@link Item.Settings()}.
+         */
+        public CustomItem(Settings settings) {
+            super(settings);
+        }
     }
+
+```
+    
 </details>
 <details><summary><h3>Registering an Item</h3></summary>
 
-    package org.sixixsix.customitemtutorial.item;  
-      
-    import net.minecraft.item.Item;  
-    import net.minecraft.registry.Registries;  
-    import net.minecraft.registry.Registry;  
-    import net.minecraft.util.Identifier;  
-    import org.sixixsix.customitemtutorial.CustomItemTutorial;  
-           
-     public class ModItems {  
-      
-      /**  
-     * Registering an Item 
-     * This function will allow us to register new Items after we have created them.  
-     *  @param name The parameter name handles what the item is called in the registry.  
-     * @param item The parameter item handles what the item object points to.  
-     */  
-     public static void registerItem(String name, Item item){  
-      Registry.register(Registries.ITEM, Identifier.of(CustomItemTutorial.MOD_ID, name), item);  
-     }  
-      /**  
-     * Initialize Items * This function will be used to initialize custom items. */  public static void initializeItems(){  
-      // "custom_item" will be the accessible name,  
-     // CustomItem.ITEM is our ITEM's declaration.  registerItem("custom_item", CustomItem.ITEM);  
-     }  
+```java
+    package org.sixixsix.customitemtutorial.item;
+
+    import net.minecraft.item.Item;
+    import net.minecraft.registry.Registries;
+    import net.minecraft.registry.Registry;
+    import net.minecraft.util.Identifier;
+    import org.sixixsix.customitemtutorial.CustomItemTutorial;
+    
+    public class ModItems {
+    
+        /**
+         * Registering an Item
+         * This function will allow us to register new Items after we have created them.
+         *
+         * @param name The parameter name handles what the item is called in the registry.
+         * @param item The parameter item handles what the item object points to.
+         */
+        public static void registerItem(String name, Item item){
+            Registry.register(Registries.ITEM, Identifier.of(CustomItemTutorial.MOD_ID, name), item);
+        }
+    
+        /**
+         * Initialize Items
+         * This function will be used to initialize custom items.
+         */
+        public static void initializeItems(){
+            // "custom_item" will be the accessible name,
+            // CustomItem.ITEM is our ITEM's declaration.
+            registerItem("custom_item", CustomItem.ITEM);
+        }
+    
     }
+```
+
 </details>
 
 <details><summary><h3>Result</h3>
@@ -94,9 +124,22 @@ This is essentially an extension to the default language pack in minecraft and a
 While you're in the en_us.json file, add another line underneath your item name, and call it something like `tooltip.custom_item_tutorial.custom_item`. This will setup the tooltip text for later.
 
 <details><summary>en_us.json file</summary>
-<img src="">
+<img src="https://github.com/user-attachments/assets/596467a1-4c36-4e5c-8be2-f7d362fbfdf9">
 </details>
 
+## Adding the Tooltip Text
+To add the tooltip text you must go back into your CustomItem class, where you declare the ITEM variable. Here you want to add the following code
+```java
+    @Override
+    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
+        // Here is where you enter the value of what you set in the en_us.json file, if you are using an IDE like IntelliJ IDEA,
+        // this field will be present in auto-complete (I'm not sure about others).
+        tooltip.add(Text.translatable("tooltip.custom_item_tutorial.custom_item"));
+        super.appendTooltip(stack, context, tooltip, type);
+    }
+```
+
+After adding those you should see your Item now has it's custom name and a custom tooltip.
 <details><summary>Result</summary>
-<img src="">
+<img src="https://github.com/user-attachments/assets/6198977a-f144-43d9-8900-d6293c87f4a4">
 </details>
