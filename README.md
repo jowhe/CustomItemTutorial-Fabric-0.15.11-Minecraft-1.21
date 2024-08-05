@@ -75,6 +75,7 @@ This can be applied for any instance such as blocks and entities.
      }  
     }
 </details>
+
 <details><summary><h3>Result</h3>
 <p>The result of the code above will add a custom item into the game.</p></summary>
 <img src="https://github.com/user-attachments/assets/b4e35cd6-0cc8-4597-a8e7-fd5541b4e7de">
