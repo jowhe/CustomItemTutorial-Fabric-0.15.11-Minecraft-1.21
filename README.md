@@ -6,6 +6,7 @@ This tutorial is intended for those who have already setup their development env
 # Contents
 1. #### [Changing the Display Name and adding a Tooltip](#changing-the-display-name-and-adding-a-tooltip-1)
 2. #### [Adding Custom Textures and Models](#adding-custom-textures-and-models-1)
+3. #### [Adding an ItemGroup](#adding-an-itemgroup-1)
 
 
 ## Folder Structure
@@ -178,4 +179,119 @@ The value inside of layer0 refers to the namespace of the mod which is what you 
 
 <details><summary>Result</summary>
 <img src="https://github.com/user-attachments/assets/0322f87d-cd02-4c06-a01b-6372ecc09b42">
+</details>
+
+# Adding an ItemGroup
+To add an item group we will first create a new package in `src/main/<mod_package>/` called `group`, this will encase the ModGroups class.
+In this class we are going to create new RegistryKey<ItemGroup> this is creating a new key to identify our Item Group.
+```java
+
+/**
+     * In order for your item group to be accessible you need to make a registry key
+     * this acts as the identifier for your item group.
+     */
+    public static final RegistryKey<ItemGroup> CUSTOM_ITEM_GROUP_KEY =
+            RegistryKey.of(Registries.ITEM_GROUP.getKey(),
+                    Identifier.of(CustomItemTutorial.MOD_ID,
+                            "custom_item_group"));
+
+```
+Underneath this we are going to create the actual ItemGroup, we do this by using `FabricItemGroup.builder().build()`, this function takes in extra parameters such as `.icon()`. The code below will show you how to create the ItemGroup with a respective icon.
+```java
+
+public static ItemGroup CUSTOM_ITEM_GROUP =
+            FabricItemGroup.builder()
+                    .icon(() -> new ItemStack(CustomItem.ITEM)).build();
+
+```
+After that you have to register your ItemGroup which can be done by creating a new public void called `initializeGroups()` and call it from your `onInitialize()` function in the mods main class.
+<details><summary><h5>ModGroups.java</h5></summary>
+
+```java
+
+package org.sixixsix.customitemtutorial.group;
+
+import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.util.Identifier;
+import org.sixixsix.customitemtutorial.CustomItemTutorial;
+import org.sixixsix.customitemtutorial.item.CustomItem;
+
+public class ModGroups {
+
+    /**
+     * In order for your item group to be accessible you need to make a registry key
+     * this acts as the identifier for your item group.
+     */
+    public static final RegistryKey<ItemGroup> CUSTOM_ITEM_GROUP_KEY =
+            RegistryKey.of(Registries.ITEM_GROUP.getKey(),
+                    Identifier.of(CustomItemTutorial.MOD_ID,
+                            "custom_item_group"));
+
+    public static ItemGroup CUSTOM_ITEM_GROUP =
+            FabricItemGroup.builder()
+                    .icon(() -> new ItemStack(CustomItem.ITEM))
+                    .displayName(Text.translatable("itemGroup.custom_items"))
+                    .build();
+
+    public static void initializeGroups(){
+        Registry.register(Registries.ITEM_GROUP, CUSTOM_ITEM_GROUP_KEY, CUSTOM_ITEM_GROUP);
+    }
+}
+
+```
+
+</details>
+
+Finally you can edit the `en_us.json` file to include a name for your Item group and add your item to the group. That is done by calling `ItemGroupEvents.modifyEntriesEvent()` in the `ModItems` class. Once you have added that to your class, call `ModGroups.initializeGroups()` in your main mod class.
+
+<details><summary><h5>ModItems.java initializeItems()</h5></summary>
+
+```java
+
+/**
+     * Initialize Items
+     * This function will be used to initialize custom items.
+     */
+    public static void initializeItems(){
+        // "custom_item" will be the accessible name,
+        // CustomItem.ITEM is our ITEM's declaration.
+        registerItem("custom_item", CustomItem.ITEM);
+
+        // Add the custom item to the custom item group.
+        ItemGroupEvents.modifyEntriesEvent(ModGroups.CUSTOM_ITEM_GROUP_KEY).register(itemGroup -> {
+            itemGroup.add(CustomItem.ITEM);
+        });
+
+    }
+
+```
+
+</details>
+
+<details><summary><h5>CustomItemTutorial.java onInitialize()</h5></summary>
+
+```java
+
+/**
+     * This is the main entrypoint of your mod.
+     * All of your main functionality will be contained in here.
+     */
+    @Override
+    public void onInitialize() {
+        // Call the initializeItems function to register the items in the game.
+        ModItems.initializeItems();
+        ModGroups.initializeGroups();
+    }
+
+```
+
+</details>
+
+<details><summary>Result</summary>
+<img src="https://github.com/user-attachments/assets/986c50f8-da77-4990-9590-18491c90c758">
 </details>
