@@ -1,7 +1,8 @@
-package org.sixixsix.customitemtutorial;
+package org.jowhe.customitemtutorial;
 
 import net.fabricmc.api.ModInitializer;
-import org.sixixsix.customitemtutorial.item.ModItems;
+import org.jowhe.customitemtutorial.group.ModGroups;
+import org.jowhe.customitemtutorial.item.ModItems;
 
 public class CustomItemTutorial implements ModInitializer {
 
@@ -15,5 +16,6 @@ public class CustomItemTutorial implements ModInitializer {
     public void onInitialize() {
         // Call the initializeItems function to register the items in the game.
         ModItems.initializeItems();
+        ModGroups.initializeGroups();
     }
 }

@@ -19,7 +19,7 @@ This can be applied for any instance such as blocks and entities.
     package org.sixixsix.customitemtutorial;
 
     import net.fabricmc.api.ModInitializer;
-    import org.sixixsix.customitemtutorial.item.ModItems;
+    import item.org.jowhe.customitemtutorial.ModItems;
     
     public class CustomItemTutorial implements ModInitializer {
     
@@ -81,7 +81,7 @@ This can be applied for any instance such as blocks and entities.
     import net.minecraft.registry.Registries;
     import net.minecraft.registry.Registry;
     import net.minecraft.util.Identifier;
-    import org.sixixsix.customitemtutorial.CustomItemTutorial;
+    import org.jowhe.customitemtutorial.CustomItemTutorial;
     
     public class ModItems {
     

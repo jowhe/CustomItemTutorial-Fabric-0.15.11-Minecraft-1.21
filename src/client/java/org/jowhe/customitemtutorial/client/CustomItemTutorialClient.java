@@ -1,4 +1,4 @@
-package org.sixixsix.customitemtutorial.client;
+package org.jowhe.customitemtutorial.client;
 
 import net.fabricmc.api.ClientModInitializer;
 

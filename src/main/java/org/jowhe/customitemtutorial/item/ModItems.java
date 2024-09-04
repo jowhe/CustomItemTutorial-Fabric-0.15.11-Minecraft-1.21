@@ -1,10 +1,12 @@
-package org.sixixsix.customitemtutorial.item;
+package org.jowhe.customitemtutorial.item;
 
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
-import org.sixixsix.customitemtutorial.CustomItemTutorial;
+import org.jowhe.customitemtutorial.CustomItemTutorial;
+import org.jowhe.customitemtutorial.group.ModGroups;
 
 public class ModItems {
 
@@ -27,6 +29,12 @@ public class ModItems {
         // "custom_item" will be the accessible name,
         // CustomItem.ITEM is our ITEM's declaration.
         registerItem("custom_item", CustomItem.ITEM);
+
+        // Add the custom item to the custom item group.
+        ItemGroupEvents.modifyEntriesEvent(ModGroups.CUSTOM_ITEM_GROUP_KEY).register(itemGroup -> {
+            itemGroup.add(CustomItem.ITEM);
+        });
+
     }
 
 }

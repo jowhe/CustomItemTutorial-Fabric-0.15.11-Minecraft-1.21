@@ -13,10 +13,10 @@
   "environment": "*",
   "entrypoints": {
     "client": [
-      "org.sixixsix.customitemtutorial.client.CustomItemTutorialClient"
+      "org.jowhe.customitemtutorial.client.CustomItemTutorialClient"
     ],
     "main": [
-      "org.sixixsix.customitemtutorial.CustomItemTutorial"
+      "org.jowhe.customitemtutorial.CustomItemTutorial"
     ]
   },
   "depends": {

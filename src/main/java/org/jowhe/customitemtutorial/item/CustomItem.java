@@ -1,4 +1,4 @@
-package org.sixixsix.customitemtutorial.item;
+package org.jowhe.customitemtutorial.item;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
